@@ -41,7 +41,6 @@ Assim que é rodado o "*ionic serve -c*" você abre o aplicativo **Ionic DevApp*
 * Android SDK (Caso esteja testando para a plataforma Android) [Dispensável caso utilize o Ionic Devapp]
 * Xcode (Caso utilize um Mac e queira realizar build para a plataforma iOS) [Dispensável caso utilize o ionic Devapp diretamente no seu iPhone]
 
-
 ## Precisando de ajuda?
 
 Em caso de dúvidas, por favor, abra um issue no github que tentaremos responder de maneira mais rápida possível.
