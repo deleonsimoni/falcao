@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 
-import { GoogleMaps, GoogleMap } from '@ionic-native/google-maps/ngx';
+import { GoogleMaps, GoogleMap, Marker, GoogleMapsEvent } from '@ionic-native/google-maps/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @Component({
   selector: 'app-maps',
@@ -13,7 +14,8 @@ export class MapsPage implements OnInit {
   private map: GoogleMap;
 
   constructor(
-    private platform: Platform
+    private platform: Platform,
+    private geolocation: Geolocation
   ) { }
 
   async ngOnInit() {
@@ -22,19 +24,45 @@ export class MapsPage implements OnInit {
     this.loadMap();
   }
 
-  private loadMap() {
+  private getLocation(): Promise<any> {
+    return this.geolocation.getCurrentPosition();
+  }
+
+  private async loadMap() {
+    const { coords } = await this.getLocation();
+
     const markOption = {
       camera: {
         target: {
-          lat: 0,
-          lng: 0,
+          lat: coords.latitude,
+          lng: coords.longitude,
         },
         zoom: 18,
         tilt: 30
       }
     };
 
-    this.map = GoogleMaps.create('map_canvas');
+    console.log(markOption);
+
+    this.map = GoogleMaps.create('map_canvas', markOption);
+
+    this.addMark(coords);
+  }
+
+  private addMark(coords) {
+    const marker: Marker = this.map.addMarkerSync({
+      title: 'Ionic',
+      icon: 'blue',
+      animation: 'DROP',
+      position: {
+        lat: coords.latitude,
+        lng: coords.longitude
+      }
+    });
+
+    marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
+      alert('clicked');
+    });
   }
 
 }
