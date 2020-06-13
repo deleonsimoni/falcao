@@ -1,5 +1,7 @@
 {
   "name": "falcao",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

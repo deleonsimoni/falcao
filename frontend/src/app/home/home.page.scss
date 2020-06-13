@@ -1,0 +1,13 @@
+.action-resource {
+    background: #0474ff;
+    color: #fff;
+    box-shadow: 4px 4px 4px 0px #000000ad;
+    border-radius: 4px;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+
+    .label {
+        margin: 20px auto;
+    }
+}
