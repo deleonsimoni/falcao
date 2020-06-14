@@ -30,4 +30,8 @@ export class WizardPage implements OnInit {
     this.router.navigate(['/enter-mode']);
   }
 
+  next(slides){
+    slides.slideNext();
+  }
+
 }

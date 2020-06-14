@@ -12,6 +12,10 @@ export class HomePage implements OnInit{
 
   url: SafeResourceUrl;
   showFalcon = false;
+  showMarkers = false;
+  de: string;
+  ate: string;
+
 
   constructor(
     private brightness: Brightness,
@@ -30,6 +34,12 @@ export class HomePage implements OnInit{
     const brightnessValue = 1;
     this.brightness.setBrightness(brightnessValue);
     this.showFalcon = true;
+  }
+
+  verifyRoute(){
+    if(this.de && this.ate){
+      this.showMarkers = true;
+    }
   }
 
 }

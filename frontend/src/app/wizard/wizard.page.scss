@@ -18,6 +18,10 @@ ion-slides {
   font-family: "Open Sans", sans-serif;
 }
 
+.bg-button {
+  --background: linear-gradient(180deg, #2c3a97 0%, #3faade 100%), #2c3a97 !important;
+}
+
 .swiper-slide {
   display: block;
 
