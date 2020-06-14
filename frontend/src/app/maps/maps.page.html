@@ -1,8 +1,13 @@
 <ion-content>
-  <div #map id="map"></div>
-  <ion-card>
-    <ion-card-content>
-      <div #directionsPanel></div>
-    </ion-card-content>
-  </ion-card>
+  <div class="container">
+    <div #map id="map"></div>
+    <ion-card class="navigation" *ngIf="showSteps">
+      <ion-card-content>
+        <div #directionsPanel></div>
+      </ion-card-content>
+    </ion-card>
+    <app-travel-preview class="show-panel" (initRoute)="showRoute($event)" [preview]="resultRoute" *ngIf="showPreview">
+    </app-travel-preview>
+    <ion-button class="btn" (click)="calculateNavigation()">+</ion-button>
+  </div>
 </ion-content>

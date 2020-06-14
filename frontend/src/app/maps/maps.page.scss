@@ -1,15 +1,31 @@
-.scroll {
+.container {
+    position: relative;
     height: 100%;
-}
 
-#map {
-    width: 100%;
-    height: 100%;
-}
+    #map {
+        width: 100%;
+        height: 100%;
+    }
 
-ion-card {
-    max-height: 200px;
-    overflow: scroll;
-    position: absolute;
-    z-index: 1;
+    .show-panel {
+        position: absolute;
+        z-index: 9999;
+        bottom: 0;
+        overflow: scroll;
+        max-height: 260px;
+    }
+
+    .btn {
+        position: absolute;
+        z-index: 9999;
+        top: 0px;
+        right: 0px;
+        --background: red;
+        color: #fff;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        border: 1px solid transparent;
+        border-radius: 40px;
+    }
 }

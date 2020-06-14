@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { MapsPageRoutingModule } from './maps-routing.module';
 
 import { MapsPage } from './maps.page';
+import { TravelPreviewComponent } from '../components/travel-preview/travel-preview.component';
+
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 
 @NgModule({
@@ -17,7 +19,8 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
     MapsPageRoutingModule
   ],
   declarations: [
-    MapsPage
+    MapsPage,
+    TravelPreviewComponent
   ],
   providers: [
     Geolocation

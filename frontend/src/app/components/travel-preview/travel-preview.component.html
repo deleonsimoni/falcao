@@ -1,0 +1,24 @@
+<ion-card class="navigation">
+  <ion-card-content>
+    <div class="destination-preview">
+      <h2 class="address">{{ (routeData$ | async)?.address }}</h2>
+      <ion-row>
+        <ion-col size="6">
+          <p class="distance-label">Distância</p>
+        </ion-col>
+        <ion-col size="6">
+          <p class="distance">{{ (routeData$ | async)?.distance }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <p class="route-time-label">Tempo de trajeto</p>
+        </ion-col>
+        <ion-col size="6">
+          <p class="route-time">{{ (routeData$ | async)?.time }}</p>
+        </ion-col>
+      </ion-row>
+      <ion-button expand="block" (click)="init()">Iniciar</ion-button>
+    </div>
+  </ion-card-content>
+</ion-card>
