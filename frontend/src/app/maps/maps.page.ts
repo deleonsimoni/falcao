@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Platform } from '@ionic/angular';
 
-import { GoogleMaps, GoogleMap, Marker, GoogleMapsEvent } from '@ionic-native/google-maps/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+
+declare var google;
 
 @Component({
   selector: 'app-maps',
@@ -11,17 +12,20 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 })
 export class MapsPage implements OnInit {
 
-  private map: GoogleMap;
+  @ViewChild('map') mapElement: ElementRef;
+  @ViewChild('directionsPanel') directionsPanel: ElementRef;
+  private map: any;
 
   constructor(
-    private platform: Platform,
-    private geolocation: Geolocation
+    private geolocation: Geolocation,
+    private platform: Platform
   ) { }
 
-  async ngOnInit() {
-    await this.platform.ready();
-
-    this.loadMap();
+  ngOnInit() {
+    this.platform.ready().then(() => {
+      this.loadMap();
+      this.startNavigating();
+    });
   }
 
   private getLocation(): Promise<any> {
@@ -31,38 +35,39 @@ export class MapsPage implements OnInit {
   private async loadMap() {
     const { coords } = await this.getLocation();
 
-    const markOption = {
-      camera: {
-        target: {
-          lat: coords.latitude,
-          lng: coords.longitude,
-        },
-        zoom: 18,
-        tilt: 30
-      }
+    const coordinates = new google.maps.LatLng(coords.latitude, coords.longitude);
+
+    const options = {
+      center: coordinates,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    console.log(markOption);
-
-    this.map = GoogleMaps.create('map_canvas', markOption);
-
-    this.addMark(coords);
+    this.map = new google.maps.Map(this.mapElement.nativeElement, options);
   }
 
-  private addMark(coords) {
-    const marker: Marker = this.map.addMarkerSync({
-      title: 'Ionic',
-      icon: 'blue',
-      animation: 'DROP',
-      position: {
-        lat: coords.latitude,
-        lng: coords.longitude
+  private startNavigating() {
+
+    const directionsService = new google.maps.DirectionsService;
+    const directionsDisplay = new google.maps.DirectionsRenderer;
+
+    directionsDisplay.setMap(this.map);
+    directionsDisplay.setPanel(this.directionsPanel.nativeElement);
+
+    directionsService.route({
+      origin: 'Av. Prof. João Brasil, 870 - Fonseca',
+      destination: 'Av. A, 410 - Valverde, Nova Iguaçu - RJ, 26290-375',
+      travelMode: google.maps.TravelMode['DRIVING']
+    }, (res, status) => {
+      if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setDirections(res);
+      } else {
+        console.warn(status);
       }
+    }, err => {
+      console.log(err);
     });
 
-    marker.on(GoogleMapsEvent.MARKER_CLICK).subscribe(() => {
-      alert('clicked');
-    });
   }
 
 }
