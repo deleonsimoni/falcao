@@ -43,7 +43,7 @@ Pensando nisso, criamos o Falcão, o aplicativo que ajuda o caminhoneiro a prese
 
 - As APIs do Waze (ou Maps) para navegação são pagas. Para esse protótipo, utilizamos apenas as APIs gratuitas. Com as funções pagas, é possível numa versão subsequente a formação de rotas, apuração da geolocalização automática e destaques de pontos de interesse após a formação da rota.
 
--Pesamos que a tela de login pode gerar atrito com um público pouco acostumado com uso de apps. Por isso, adicionamos a opção "pular". Na mesma linha, com apenas um clique em "ativar Falcão" já é possível deixar a navegação na vertical e em brilho máximo, sem necessidade de maiores esforços do usuário.
+- Pesamos que a tela de login pode gerar atrito com um público pouco acostumado com uso de apps. Por isso, adicionamos a opção "pular". Na mesma linha, com apenas um clique em "ativar Falcão" já é possível deixar a navegação na vertical e em brilho máximo, sem necessidade de maiores esforços do usuário.
 
 ---
 
