@@ -1,40 +1,35 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Brightness } from '@ionic-native/brightness/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss']
 })
-export class HomePage {
+export class HomePage implements OnInit{
 
-  public options = [
-    {
-      label: 'Maps',
-      page: 'maps'
-    },
-    {
-      label: 'lorem ipsum',
-      page: ''
-    },
-    {
-      label: 'lorem ipsum',
-      page: ''
-    },
-    {
-      label: 'lorem ipsum',
-      page: ''
-    }
-  ];
+  url: SafeResourceUrl;
+  showFalcon = false;
 
   constructor(
-    private router: Router
+    private brightness: Brightness,
+    private screenOrientation: ScreenOrientation,
+    private sanitize: DomSanitizer
   ) { }
 
-  public navigate(page): void {
-    if (page === 'maps') {
-      this.router.navigate([`/${page}`]);
-    }
+  ngOnInit() {
+    const address = "https://embed.waze.com/iframe?zoom=12&lat=45.6906304&lon=-120.810983"
+    this.url = this.sanitize.bypassSecurityTrustResourceUrl(address);
+
+  }
+
+  falcon(){
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.LANDSCAPE_PRIMARY);
+    const brightnessValue = 1;
+    this.brightness.setBrightness(brightnessValue);
+    this.showFalcon = true;
   }
 
 }

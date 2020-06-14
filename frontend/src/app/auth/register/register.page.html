@@ -1,10 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Crie sua conta</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content >
+<ion-content class="bg-class">
+  <img src="./assets/logo name.png"/>
   <form  #form="ngForm" (ngSubmit)="register(form)">
     <ion-grid>
       <ion-row justify-content-center>
@@ -26,7 +22,7 @@
 
           <div padding>
             <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Criar</ion-button>
-            <ion-button  size="large" (click)="login()" [disabled]="form.invalid" expand="block">Voltar</ion-button>
+            <ion-button  size="large" (click)="login()" expand="block">Voltar</ion-button>
 
           </div>
 

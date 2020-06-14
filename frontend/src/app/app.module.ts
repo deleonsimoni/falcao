@@ -13,6 +13,9 @@ import { IonicStorageModule } from '@ionic/storage';
 import { environment } from '../environments/environment';
 
 import { HttpClientModule } from '@angular/common/http';
+import { Brightness } from '@ionic-native/brightness/ngx';
+import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+
 
 
 @NgModule({
@@ -28,6 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     StatusBar,
     SplashScreen,
+    Brightness,
+    ScreenOrientation,
     { 
       provide: RouteReuseStrategy, useClass: IonicRouteStrategy 
     },

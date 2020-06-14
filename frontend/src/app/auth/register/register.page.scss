@@ -6,3 +6,15 @@ ion-item{
 ion-button{
     --background: #062f77;
 }
+
+.bg-class{
+    --background: linear-gradient(180deg, #2C3A97 0%, #3FAADE 100%), #2C3A97 !important;
+  }
+
+  img {
+    max-height: 50%;
+    max-width: 80%;
+    margin: -100px 0px;
+    margin-left: 25px;
+    pointer-events: none;
+  }
