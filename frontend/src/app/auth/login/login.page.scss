@@ -1,27 +1,31 @@
-ion-item{
-    --background: #3880ff;
-    --color: #fff;
-}
-ion-button{
-    --background: #062f77;
+ion-toolbar {
+  --background: transparent;
 }
 
-a{
-    color: #fff;
+ion-item {
+  --background: #3880ff;
+  --color: #fff;
+}
+ion-button {
+  --background: #062f77;
+}
+
+a {
+  color: #fff;
 }
 
 img {
-    max-height: 50%;
-    max-width: 80%;
-    margin: -100px 0px;
-    margin-left: 25px;
-    pointer-events: none;
-  }
+  max-height: 50%;
+  max-width: 80%;
+  margin: -100px 0px;
+  margin-left: 25px;
+  pointer-events: none;
+}
 
-  .bg-class{
-    --background: linear-gradient(180deg, #2C3A97 0%, #3FAADE 100%), #2C3A97 !important;
-  }
+.bg-class {
+  --background: linear-gradient(180deg, #2c3a97 0%, #3faade 100%), #2c3a97 !important;
+}
 
-  .loginButtons{
-    margin-top: 130px;
-  }
+.loginButtons {
+  margin-top: 130px;
+}

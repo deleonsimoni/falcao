@@ -7,28 +7,30 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'wizard',
-    pathMatch: 'full'
-  },
-  {
     path: 'maps',
-    loadChildren: () => import('./maps/maps.module').then( m => m.MapsPageModule)
+    loadChildren: () => import('./maps/maps.module').then(m => m.MapsPageModule)
   },
   {
     path: 'wizard',
-    loadChildren: () => import('./wizard/wizard.module').then( m => m.WizardPageModule)
+    loadChildren: () => import('./wizard/wizard.module').then(m => m.WizardPageModule)
   },
   {
     path: 'register',
-    loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
+    loadChildren: () => import('./auth/register/register.module').then(m => m.RegisterPageModule)
   },
   {
     path: 'login',
-    loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./auth/login/login.module').then(m => m.LoginPageModule)
+  },
+  {
+    path: 'enter-mode',
+    loadChildren: () => import('./enter-mode/enter-mode.module').then(m => m.EnterModePageModule)
+  },
+  {
+    path: '',
+    redirectTo: 'wizard',
+    pathMatch: 'full'
   }
-
-
 ];
 @NgModule({
   imports: [

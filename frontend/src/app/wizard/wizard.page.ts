@@ -18,17 +18,16 @@ export class WizardPage implements OnInit {
   ngOnInit() {
 
     this.storage.get('wizard').then((val) => {
-      if(val){
-        this.router.navigate(['/login']);
+      if (val) {
+        this.router.navigate(['/enter-mode']);
       }
     });
 
   }
 
-  closeWizard(){
+  closeWizard() {
     this.storage.set('wizard', 'true');
-    this.router.navigate(['/login']);
-
+    this.router.navigate(['/enter-mode']);
   }
 
 }

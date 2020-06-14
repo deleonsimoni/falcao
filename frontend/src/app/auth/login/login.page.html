@@ -1,36 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content padding class="bg-class">
-  <img src="./assets/logo name.png"/>
+  <img src="./assets/logo name.png" />
   <form #form="ngForm" (ngSubmit)="login(form)">
     <ion-grid>
       <ion-row justify-content-center>
         <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-          
-          <div padding *ngIf="showLogin">
-            <ion-item>
-              <ion-input name="email" type="email" placeholder="E-mail" ngModel required></ion-input>
-            </ion-item>
-            <ion-item>
-              <ion-input name="password" type="password" placeholder="Senha" ngModel required></ion-input>
-            </ion-item>
-          </div>
-          <div class="loginButtons">
-            <div padding *ngIf="!showLogin">
-              <ion-button size="large" (click)="displayLoginForm()" [disabled]="form.invalid" expand="block">Entrar</ion-button>
-            </div>
-            <div padding *ngIf="showLogin">
-              <ion-button size="large" (click)="login()" [disabled]="form.invalid" expand="block">Entrar</ion-button>
-            </div>
-            <div padding>
-              <ion-button size="large" (click)="register()" expand="block">Cadastrar</ion-button>
-            </div>
-            <div padding>
-              
-            </div>
-            <ion-buttons end>
-              <ion-button size="small" (click)="forward()" color="light">Pular</ion-button>
-            </ion-buttons>
-        </div>
+          <ion-item>
+            <ion-label>Email</ion-label>
+            <ion-input name="email" type="email" placeholder="E-mail" ngModel required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label>Senha</ion-label>
+            <ion-input name="password" type="password" placeholder="Senha" ngModel required></ion-input>
+          </ion-item>
+          <ion-button size="large" (click)="displayLoginForm()" [disabled]="form.invalid" expand="block">Entrar
+          </ion-button>
+
+          <a href="">Ainda não é cadatrado? Clique aqui.</a>
         </ion-col>
       </ion-row>
 

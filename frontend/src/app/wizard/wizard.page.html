@@ -1,39 +1,38 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Bem-Vindo</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content fullscreen class="ion-padding" scroll-y="false">
+  <ion-slides>
 
-<ion-content>
+    <ion-slide>
+      <div class="slide">
+        <img src="./assets/wizard 1.png" />
+        <h2>Olá Caminhoneiro</h2>
+        <p class="description">O <strong class="text-featured">Falcão</strong> está aqui para trazer praticidade e
+          segurança em sua rotina.</p>
+        <ion-button fill="clear">Arraste <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-slide>
 
-  <ion-content fullscreen class="ion-padding" scroll-y="false">
-    <ion-slides>
-
-      <ion-slide>
-        <div class="slide">
-          <img src="./assets/wizard 1.png"/>
-          <h2>Olá Caminhoneiro</h2>
-          <p>O <b>Falcão</b> está aqui para trazer praticidade e segurança em sua rotina.</p>
-          <ion-button fill="clear">Arraste <ion-icon slot="end" name="chevron-forward-outline"></ion-icon></ion-button>
-
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <img src="./assets/wizard 2.png"/>
+    <ion-slide>
+      <div class="slide">
+        <img src="./assets/wizard 2.png" />
         <h2>Como funciona?</h2>
-        <p><b>Gire</b> seu celular e entraremos em modo <b>Falcão</b>.</p>
-        <ion-button fill="clear">Arraste <ion-icon slot="end" name="chevron-forward-outline"></ion-icon></ion-button>
+        <p class="description"><strong class="text-featured">Gire</strong> seu celular e entraremos em modo <strong
+            class="text-featured">Falcão</strong>.</p>
+        <ion-button fill="clear">Arraste <ion-icon slot="end" name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-slide>
 
-      </ion-slide>
-
-      <ion-slide>
-        <img src="./assets/wizard 3.png"/>
+    <ion-slide>
+      <div class="slide-last">
+        <img src="./assets/wizard 3.png" />
         <h2>Pronto para começar?</h2>
-        <ion-button (click)="closeWizard()" fill="clear">Vamos nessa <ion-icon slot="end" name="eye-outline"></ion-icon></ion-button>
-      </ion-slide>
+        <ion-button (click)="closeWizard()" fill="clear">Vamos nessa <ion-icon slot="end" name="eye-outline">
+          </ion-icon>
+        </ion-button>
+      </div>
+    </ion-slide>
 
-    </ion-slides>
-
+  </ion-slides>
 
 </ion-content>
