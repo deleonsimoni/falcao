@@ -1,8 +1,12 @@
 <p align="center">
  <img src="./frontend/src/assets/introGit.png" alt="Falcão">
+</p>
+
+<p align="center">
  <a href="http://18.228.225.255/public/apk/Falcao-v1.apk">
  Download APP - BETA</a>
 </p>
+
 <h3 align="center">Falcão APP - Hackathon CCR</h3>
 
 <div align="center">
