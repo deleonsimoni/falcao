@@ -7,24 +7,17 @@ import { AuthService } from 'src/app/services/auth.service';
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage {
 
   constructor(
     private authService: AuthService,
     private router: Router
-     ) { }
-
-  ngOnInit() {
-  }
+  ) { }
 
   register(form) {
     this.authService.register(form.value).subscribe((res) => {
       this.router.navigate(['/home']);
     });
-  }
-
-  login(){
-    this.router.navigate(['/login']);
   }
 
 }

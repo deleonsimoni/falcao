@@ -7,37 +7,15 @@ import { Router } from '@angular/router';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
-
-  showLogin = false;
+export class LoginPage {
 
   constructor(
     private authService: AuthService,
     private router: Router
   ) { }
 
-  ngOnInit() {
+  login(form) {
+    this.authService.login(form.value)
+      .subscribe(() => this.router.navigate(['/home']));
   }
-
-  login(form){
-    this.authService.login(form.value).subscribe((res)=>{
-      this.router.navigate(['/login']);
-    });
-  }
-
-  forward(){
-    this.router.navigate(['/home']);
-
-  }
-
-  register(){
-    this.router.navigate(['/register']);
-  }
-
-  displayLoginForm(){
-    this.showLogin = true;
-  }
-
-
-
 }
