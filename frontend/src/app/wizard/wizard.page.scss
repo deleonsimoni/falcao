@@ -1,0 +1,64 @@
+@mixin slide-defult {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin img-props($mb: 0px) {
+  max-height: 50%;
+  max-width: 80%;
+  margin: 0px 0px $mb;
+  pointer-events: none;
+}
+
+ion-slides {
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.bg-button {
+  --background: linear-gradient(180deg, #2c3a97 0%, #3faade 100%), #2c3a97 !important;
+}
+
+.swiper-slide {
+  display: block;
+
+  .slide {
+    @include slide-defult;
+
+    img {
+      @include img-props();
+    }
+
+    &-last {
+      @include slide-defult;
+
+      img {
+        @include img-props(80px);
+      }
+    }
+
+    h2 {
+      margin-top: 2.8rem;
+    }
+
+    .button {
+      cursor: none;
+      --ripple-color: transparent;
+    }
+
+    .description {
+      padding: 0px 16px;
+      font-size: 17px;
+      line-height: 25px;
+      color: #000;
+      text-align: center;
+
+      .text-featured {
+        color: #000;
+      }
+    }
+  }
+}

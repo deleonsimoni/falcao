@@ -1,20 +1,46 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Falcão
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-grid>
-    <ion-row>
-      <ion-col size="6" *ngFor="let option of options">
-        <div class="action-resource ion-activatable" (click)="navigate(option.page)">
-          <p class="label">{{ option.label }}</p>
-          <ion-ripple-effect></ion-ripple-effect>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+
+    <iframe  height="100%" width="100%" [src]="url" name="iframe_a"></iframe>
+
+    <div *ngIf="!showFalcon" id="floating-panel">
+
+      <ion-grid>
+        <ion-row justify-content-center>
+          Rota
+          <ion-col align-self-center size-md="6" size-lg="2" size-xs="12">
+            <ion-item>
+              <ion-input name="de" (change)="verifyRoute()" value="Rio de Janeiro" placeholder="De:" [(ngModel)]="de" ngModel></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input name="ate" (change)="verifyRoute()" value="Espirito Santo" placeholder="Até:" [(ngModel)]="ate" ngModel></ion-input>
+            </ion-item>
+            
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf="showMarkers" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="2" size-xs="12">
+            <ion-item>
+              <ion-icon name="timer-outline"></ion-icon> 6 Horas
+            </ion-item>
+            <ion-item>
+              <ion-icon name="battery-charging-outline"></ion-icon> 4 Bons pontos de parada
+            </ion-item>
+            <ion-item>
+              <ion-icon name="flash-off-outline"></ion-icon> Baixo índice de chuva
+            </ion-item>
+            <ion-item>
+              <ion-icon name="warning-outline"></ion-icon> Alto índice de roubo
+            </ion-item>
+          </ion-col>
+        </ion-row>
+  
+      </ion-grid>
+
+
+      <ion-button (click)="falcon()" expand="block" class="bg-button">Acionar Falcão 
+        <ion-icon slot="end" name="eye-outline"></ion-icon>
+      </ion-button>
+    </div>
+
 </ion-content>

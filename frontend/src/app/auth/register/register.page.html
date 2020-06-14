@@ -1,0 +1,40 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start" class="ion-no-padding">
+      <ion-back-button defaultHref="/login" [text]="''" class="ion-no-padding" color="dark-contrast">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="bg-class">
+  <img src="./assets/logo name.png" />
+  <form #form="ngForm" (ngSubmit)="register(form)">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <h3>É rapidinho!</h3>
+          <div padding>
+            <ion-item>
+              <ion-label position="stacked">Nome</ion-label>
+              <ion-input name="nome" type="text" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Email</ion-label>
+              <ion-input name="email" type="email" ngModel required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="stacked">Senha</ion-label>
+              <ion-input name="senha" type="password" ngModel required></ion-input>
+            </ion-item>
+          </div>
+
+          <div padding>
+            <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block"
+              (click)="register(form.value)">CADASTRAR</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
