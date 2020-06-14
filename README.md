@@ -65,5 +65,5 @@ Pensando nisso, criamos o Falcão, o aplicativo que ajuda o caminhoneiro a prese
 
 ## Agradecimentos :sparkling_heart:<a name = "acknowledgments"></a>
 
-- Shawee(https://shawee.io/)
-- Grupo CCR(http://www.grupoccr.com.br/)
+- [Shawee](https://shawee.io/)
+- [Grupo CCR](http://www.grupoccr.com.br/)
