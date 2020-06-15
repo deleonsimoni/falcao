@@ -3,6 +3,11 @@
 </p>
 
 <p align="center">
+ <a href="https://www.youtube.com/watch?v=MMnuFtqxGzM&feature=youtu.be">
+ Vídeo de Apresentação</a>
+</p>
+
+<p align="center">
  <a href="http://18.228.225.255/public/apk/Falcao-v1.apk">
  Download APP - BETA</a>
 </p>
@@ -16,6 +21,10 @@
 </div>
 
 # FALCÃO - Olhos na estrada
+
+<p align="center">
+ <img src="./frontend/src/assets/introFigma.png" alt="Falcão">
+</p>
 
 ## Índice 📝
 
