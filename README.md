@@ -60,7 +60,7 @@ Pensando nisso, criamos o Falcão, o aplicativo que ajuda o caminhoneiro a prese
 
 - [Angular](https://angular.io/) - Front-End
 - [NodeJS](https://nodejs.org/en/) - Back-End
-- [Express](https://expressjs.com/pt-br/) - API's
+- [IONIC](https://ionicframework.com/) - Mobile
 - [MongoDB](https://www.mongodb.com/) - Banco de Dados
 - [Figma](https://www.figma.com) - Protótipagem
 
